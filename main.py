@@ -28,7 +28,7 @@ class Ant:
 
 
 class App:
-    def __init__(self, WIDTH=1600, HEIGHT=900, CELL_SIZE=8):
+    def __init__(self, WIDTH=1600, HEIGHT=900, CELL_SIZE=2):
         pg.init()
         self.screen = pg.display.set_mode([WIDTH, HEIGHT])
         self.clock = pg.time.Clock()
@@ -37,7 +37,7 @@ class App:
         self.ROWS, self.COLS = HEIGHT // CELL_SIZE, WIDTH // CELL_SIZE
         self.grid = [[0 for col in range(self.COLS)] for row in range(self.ROWS)]
 
-        self.ants = [Ant(self, [randrange(self.COLS), randrange(self.ROWS)], self.get_color()) for i in range(15)]
+        self.ants = [Ant(self, [randrange(self.COLS), randrange(self.ROWS)], self.get_color()) for i in range(5000)]
 
     @staticmethod
     def get_color():
